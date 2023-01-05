@@ -1,0 +1,72 @@
+@work: hsl(15, 100%, 70%);
+@play: hsl(195, 74%, 62%);
+@study: hsl(348, 100%, 68%);
+@exercise: hsl(145, 58%, 55%);
+@social: hsl(264, 64%, 52%);
+@selfCare: hsl(43, 84%, 65%);
+@VdarkBlue: hsl(226, 43%, 10%);
+@darkBlue: hsl(235, 46%, 20%);
+@desblue: hsl(235, 45%, 61%);
+@paleBlue: hsl(236, 100%, 87%);
+@blue: hsl(246, 80%, 60%);
+
+body {
+  background-color: @VdarkBlue;
+}
+
+.container {
+  width: 80%;
+  height: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: @VdarkBlue;
+  margin: 100px auto;
+
+  .mainCard {
+    width: 200px;
+    height: 424px;
+    grid-area: mainCard;
+    background-color: @darkBlue;
+    border-radius: 16px;
+    margin-right: 12px;
+  }
+
+  .cardGroup {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    .card {
+      width: 200px;
+      height: 200px;
+      margin: 12px;
+      border-radius: 16px;
+      position: relative;
+
+      img {
+        position: absolute;
+        right: 0;
+        margin-right: 16px;
+      }
+    }
+
+    .cdColor:nth-child(1) {
+      background-color: @work;
+    }
+    .cdColor:nth-child(2) {
+      background-color: @play;
+    }
+    .cdColor:nth-child(3) {
+      background-color: @study;
+    }
+    .cdColor:nth-child(4) {
+      background-color: @exercise;
+    }
+    .cdColor:nth-child(5) {
+      background-color: @social;
+    }
+    .cdColor:nth-child(6) {
+      background-color: @selfCare;
+    }
+  }
+}

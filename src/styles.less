@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
+
 @work: hsl(15, 100%, 70%);
 @play: hsl(195, 74%, 62%);
 @study: hsl(348, 100%, 68%);
@@ -10,8 +12,19 @@
 @paleBlue: hsl(236, 100%, 87%);
 @blue: hsl(246, 80%, 60%);
 
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   background-color: @VdarkBlue;
+  font-family: "Rubik";
 }
 
 .container {
@@ -30,6 +43,53 @@ body {
     background-color: @darkBlue;
     border-radius: 16px;
     margin-right: 12px;
+
+    .profile {
+      width: 100%;
+      height: 70%;
+      padding: 20px;
+      background-color: @blue;
+      border-radius: 16px;
+
+      .imgProfile {
+        background-color: #fff;
+        width: 80px;
+        height: 80px;
+        margin-bottom: 32px;
+        border-radius: 50%;
+        .center();
+
+        img {
+          width: 70px;
+          height: 70px;
+        }
+      }
+
+      .nameProfile {
+        p:nth-child(1) {
+          color: @paleBlue;
+          font-weight: 300;
+          font-size: 12px;
+          margin: 0;
+        }
+
+        p:nth-child(2) {
+          color: #fff;
+          font-size: 35px;
+          font-weight: 300;
+          margin: 0;
+        }
+      }
+    }
+
+    .options {
+      padding: 20px;
+
+      p {
+        color: @desblue;
+        margin: 0 0 10px 0;
+      }
+    }
   }
 
   .cardGroup {
@@ -47,6 +107,44 @@ body {
         position: absolute;
         right: 0;
         margin-right: 16px;
+      }
+
+      .contentCard {
+        width: 200px;
+        height: 75%;
+        padding: 20px;
+        position: absolute;
+        bottom: 0;
+        background-color: @darkBlue;
+        border-radius: 12px;
+
+        .upContent {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          span {
+            color: #fff;
+            font-weight: 500;
+          }
+        }
+
+        .middleContent {
+          margin-top: 16px;
+
+          .hours {
+            margin: 0;
+            font-size: 40px;
+            font-weight: 300;
+            color: #fff;
+          }
+          .lastMoment {
+            margin: 8px 0 0 0;
+            font-weight: 300;
+            font-size: 13px;
+            color: @paleBlue;
+          }
+        }
       }
     }
 

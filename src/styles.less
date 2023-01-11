@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
 
+@widthCard: 275px;
 @work: hsl(15, 100%, 70%);
 @play: hsl(195, 74%, 62%);
 @study: hsl(348, 100%, 68%);
@@ -18,6 +19,12 @@
   align-items: center;
 }
 
+.center_spaceBetween {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -27,6 +34,12 @@ body {
   font-family: "Rubik";
 }
 
+section {
+  display: flex;
+  justify-content: center;
+  margin-top: calc(50vh - 225px);
+}
+
 .container {
   width: 80%;
   height: 450px;
@@ -34,7 +47,6 @@ body {
   justify-content: center;
   align-items: center;
   background-color: @VdarkBlue;
-  margin: 100px auto;
 
   .mainCard {
     width: 200px;
@@ -88,6 +100,11 @@ body {
       p {
         color: @desblue;
         margin: 0 0 10px 0;
+        cursor: pointer;
+
+        &:hover {
+          color: @paleBlue;
+        }
       }
     }
   }
@@ -110,13 +127,18 @@ body {
       }
 
       .contentCard {
-        width: 200px;
+        width: 100%;
         height: 75%;
         padding: 20px;
         position: absolute;
         bottom: 0;
         background-color: @darkBlue;
         border-radius: 12px;
+
+        &:hover {
+          background-color: #2b3077;
+          cursor: pointer;
+        }
 
         .upContent {
           display: flex;
@@ -165,6 +187,81 @@ body {
     }
     .cdColor:nth-child(6) {
       background-color: @selfCare;
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+
+    .mainCard {
+      width: @widthCard;
+      height: 175px;
+      margin: 0 0 12px 0;
+
+      .profile {
+        .center();
+        height: 65%;
+
+        .nameProfile {
+          p:nth-child(1) {
+            font-size: 14px;
+          }
+
+          p:nth-child(2) {
+            font-size: 20px;
+          }
+        }
+
+        .imgProfile {
+          width: 55px;
+          height: 55px;
+          margin: 0 10px 0 0;
+
+          img {
+            width: 50px;
+            height: 50px;
+          }
+        }
+      }
+
+      .options {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        p {
+          margin: 0;
+        }
+      }
+    }
+
+    .cardGroup {
+      grid-template-columns: 1fr;
+
+      .card {
+        width: @widthCard;
+        height: 150px;
+
+        .contentCard {
+          .middleContent {
+            .center_spaceBetween();
+
+            .hours {
+              margin: 0;
+              font-size: 30px;
+            }
+            .lastMoment {
+              margin: 8px 0 0 0;
+              font-size: 14px;
+            }
+          }
+        }
+      }
     }
   }
 }
